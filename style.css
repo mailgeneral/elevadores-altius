@@ -31,7 +31,7 @@ main ul {
 
 main p {
     color: #374151; /* Un gris oscuro para mejor legibilidad (gray-700 de Tailwind) */
-    text-align: justify; /* 'left' es mejor para legibilidad que 'justify' */
+    text-align: justify; /* dejalo jusfify que se ve mejor!!!! */
     font-size: 1.125rem; /* Aumentado para mejor visibilidad */
     line-height: 1.7;
 }
@@ -274,4 +274,91 @@ main p {
 
 .animate-fade-in-up {
     animation: fadeInUp 1s ease-out forwards;
+}
+
+/* WhatsApp Floating Button */
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    right: 40px;
+    background-color: #25D366;
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 6px rgba(0,0,0,0.25);
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease, opacity 0.4s ease, visibility 0.4s;
+    opacity: 0;
+    transform: translateY(20px);
+    visibility: hidden;
+}
+
+.whatsapp-float.visible {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+}
+
+.whatsapp-icon {
+    width: 32px;
+    height: 32px;
+    fill: white;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+}
+
+.whatsapp-float .whatsapp-tooltip {
+    visibility: hidden;
+    width: 220px;
+    background-color: #111827; /* gray-900 */
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 12px;
+    position: absolute;
+    z-index: 1;
+    bottom: 110%;
+    right: 50%;
+    transform: translateX(50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    font-size: 0.875rem; /* 14px */
+    font-weight: 500;
+    pointer-events: none;
+}
+
+.whatsapp-float:hover .whatsapp-tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+
+.whatsapp-float .whatsapp-tooltip::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #111827 transparent transparent transparent;
+}
+
+@media (max-width: 768px) {
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        bottom: 20px;
+        right: 20px;
+    }
+    .whatsapp-float .whatsapp-tooltip {
+       display: none;
+    }
 }
