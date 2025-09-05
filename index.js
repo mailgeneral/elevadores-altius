@@ -132,3 +132,17 @@ if (lightboxModal && lightboxImage && lightboxClose && imageTriggers.length > 0)
         }
     });
 }
+
+// WhatsApp Button Visibility
+const whatsappButton = document.getElementById('whatsapp-button');
+
+if (whatsappButton) {
+    window.addEventListener('scroll', () => {
+        // Show button after scrolling down 200px
+        if (window.scrollY > 200) {
+            whatsappButton.classList.add('visible');
+        } else {
+            whatsappButton.classList.remove('visible');
+        }
+    });
+}
