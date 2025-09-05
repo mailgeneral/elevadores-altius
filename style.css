@@ -31,7 +31,7 @@ main ul {
 
 main p {
     color: #374151; /* Un gris oscuro para mejor legibilidad (gray-700 de Tailwind) */
-    text-align: left; /* 'left' es mejor para legibilidad que 'justify' */
+    text-align: justify; /* 'left' es mejor para legibilidad que 'justify' */
     font-size: 1.125rem; /* Aumentado para mejor visibilidad */
     line-height: 1.7;
 }
